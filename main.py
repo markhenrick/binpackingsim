@@ -20,18 +20,18 @@ if __name__ == "__main__":
     matplotlib.use("tkagg")
 
     # TODO runtime input, GUI
-    param_drive_sizes = [ 12, 16, 12, 7 ]
+    param_drive_sizes = [ 1000, 4000, 4000, 1000 ]
     param_file_size = 4
-    param_strategy = strategies.strategy_high_water
+    param_strategy = strategies.strategy_pfrd
     
     drives = simulate(param_drive_sizes, param_file_size, param_strategy)
 
     fig, ax = plt.subplots()
     for i, drive in enumerate(drives):
         print(drive)
-        ax.plot(drive.graph_relative(), label = f'Drive {i} ({drive.size()})')
+        ax.plot(drive.graph_absolute_free(), label = f'Drive {i} ({drive.size()})')
     ax.set_title(param_strategy.__name__) 
-    ax.set_xlabel("No. files stored")
-    ax.set_ylabel("Usage (relative)")
+    ax.set_xlabel(f"No. files of size {param_file_size} stored across all drives")
+    ax.set_ylabel("Free space")
     ax.legend()
     plt.show()

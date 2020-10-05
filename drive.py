@@ -5,13 +5,16 @@ class Drive:
         self._graph = [ 0 ]
     
     def __str__(self):
-        return f"Drive(size={self.size()}, graph={self.graph_absolute()})"
+        return f"Drive(size={self.size()}, graph={self.graph_absolute_usage()})"
     
-    def graph_absolute(self):
+    def graph_absolute_usage(self):
         return self._graph
     
-    def graph_relative(self):
-        return list(map(lambda x: x / self.size(), self.graph_absolute()))
+    def graph_relative_usage(self):
+        return list(map(lambda x: x / self.size(), self.graph_absolute_usage()))
+    
+    def graph_absolute_free(self):
+        return list(map(lambda x: self.size() - x, self.graph_absolute_usage()))
     
     def size(self):
         return self._size
