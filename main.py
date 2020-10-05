@@ -20,9 +20,9 @@ if __name__ == "__main__":
     matplotlib.use("tkagg")
 
     # TODO runtime input, GUI
-    param_drive_sizes = [ 1000, 4000, 4000, 1000 ]
+    param_drive_sizes = [ 1000, 4000, 4000, 2000 ]
     param_file_size = 4
-    param_strategy = strategies.strategy_pfrd
+    param_strategy = strategies.strategy_least_used_space
     
     drives = simulate(param_drive_sizes, param_file_size, param_strategy)
 
