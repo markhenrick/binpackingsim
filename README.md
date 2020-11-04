@@ -3,4 +3,4 @@ Quick script to simulate different online [bin packing](https://en.wikipedia.org
 
 It's very WIP so parameters are hardcoded for the moment. Tk GUI coming eventually
 
-[**See here for more info**](https://markhenrick.site/2020/11/03/binpacking.html)
+[**See here for more info and example plots**](https://markhenrick.site/2020/11/03/binpacking.html)
